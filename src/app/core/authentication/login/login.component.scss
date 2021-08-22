@@ -7,9 +7,13 @@
 }
 .inner-wrap{
   width: 90%;
-  height: 250px;
+  height: auto;
   background-color: white;
+  padding: 10px;
 }
 .example-full-width{
+  width: 100%;
+}
+.btn{
   width: 100%;
 }
