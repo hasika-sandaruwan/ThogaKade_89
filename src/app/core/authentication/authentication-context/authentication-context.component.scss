@@ -7,11 +7,7 @@
   height: 100vh;
   display: flex;
 }
-.left-side{
-  width: 350px;
-  background-color: #ecf0f1;
-  height: 100vh;
-}
+
 .right-side{
   flex: 1;
   display: flex;
@@ -42,4 +38,15 @@
     border-right: 1px solid white;
   }
 
+}
+
+.left-side{
+  width: 350px;
+  background-color: #ecf0f1;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.outlet-wrap{
+  flex: 1;
 }
