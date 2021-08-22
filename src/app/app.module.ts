@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { AuthenticationContextComponent } from './core/authentication/authentication-context/authentication-context.component';
 import { LoginComponent } from './core/authentication/login/login.component';
 import { SignUpComponent } from './core/authentication/sign-up/sign-up.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { SignUpComponent } from './core/authentication/sign-up/sign-up.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
