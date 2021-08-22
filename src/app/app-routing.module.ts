@@ -12,7 +12,8 @@ const routes: Routes = [
       {path: 'login', component: LoginComponent},
       {path: 'sign-up', component: SignUpComponent},
     ]
-  }
+  },
+  { path: 'dashboard', loadChildren: () => import('./module/dash-board/dash-board.module').then(m => m.DashBoardModule) }
 ];
 
 @NgModule({
