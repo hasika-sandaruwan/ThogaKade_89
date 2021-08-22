@@ -128,3 +128,26 @@
   position: absolute;
   margin-top: 50px;
 }
+ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  margin-top: 80px;
+
+  li{
+    padding: 8px 10px;
+    border-left: 5px solid transparent;
+
+    span{
+      color: white;
+    }
+
+  }
+
+  li:hover{
+    cursor: pointer;
+    background-color: #334155;
+    border-left: 5px solid #2980b9;
+  }
+
+}
