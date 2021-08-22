@@ -1,10 +1,26 @@
 .main-wrap{
   width: 100vw;
   height: 100vh;
-  border: 1px solid red;
 }
 .context{
   width: 100%;
   height: 100vh;
-  border: 1px solid red;
+  display: flex;
+}
+.left-side{
+  width: 350px;
+  background-color: #ecf0f1;
+  height: 100vh;
+}
+.right-side{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img{
+    width: 90%;
+    height: 90%;
+  }
+
 }
