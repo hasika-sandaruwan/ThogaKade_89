@@ -24,3 +24,22 @@
   }
 
 }
+.button-bar{
+  width: 100%;
+  height: auto;
+
+  .button{
+    width: 50%;
+    height: 40px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+  }
+  .button:hover{
+    background-color: #2980b9;
+  }
+  .button:first-child{
+    border-right: 1px solid white;
+  }
+
+}
