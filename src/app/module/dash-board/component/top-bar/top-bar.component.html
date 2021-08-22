@@ -5,7 +5,7 @@
     <h2>ThogaKade</h2>
   </div>
 
-  <div class="ham-wrap">
+  <div class="ham-wrap" (click)="sliderState=!sliderState">
     <div class="line"></div>
     <div class="line"></div>
     <div class="line"></div>
@@ -20,7 +20,7 @@
     </div>
   </div>
 
-  <div class="slide">
+  <div class="slide" *ngIf="sliderState" [@slider]>
 
     <div class="slide-top">
 
