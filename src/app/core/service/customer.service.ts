@@ -38,5 +38,10 @@ export class CustomerService {
     });
   }
 
+  public searchCustomer(id: string): Observable<any> {
+    return this.http.get(this.url+'customer/searchCustomer', {
+      headers:{id}
+    });
+  }
 
 }
