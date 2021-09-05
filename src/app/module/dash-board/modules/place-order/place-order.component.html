@@ -4,10 +4,8 @@
   <p class="alert alert-dark">Customer Detail</p>
   <div class="row">
     <div class="col-1">
-      <select name="" id="" class="form-control">
-        <option value="#">Test 1</option>
-        <option value="#">Test 1</option>
-        <option value="#">Test 1</option>
+      <select class="form-control" >
+        <option *ngFor="let tempCustomer of customers" value="{{tempCustomer.id}}">{{tempCustomer.id}}</option>
       </select>
     </div>
     <div class="col-4">
