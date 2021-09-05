@@ -9,7 +9,12 @@
     </tr>
     </thead>
     <tbody>
-
+      <tr *ngFor="let tempCustomer of customers; index as num">
+        <td>{{tempCustomer.id}}</td>
+        <td>{{tempCustomer.name}}</td>
+        <td>{{tempCustomer.address}}</td>
+        <td>{{tempCustomer.salary}}</td>
+      </tr>
     </tbody>
   </table>
 

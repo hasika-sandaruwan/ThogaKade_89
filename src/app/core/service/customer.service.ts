@@ -44,4 +44,8 @@ export class CustomerService {
     });
   }
 
+  public getAllCustomers(): Observable<any> {
+    return this.http.get(this.url+'customer/getAllCustomers');
+  }
+
 }
