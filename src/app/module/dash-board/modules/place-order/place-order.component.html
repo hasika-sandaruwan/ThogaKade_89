@@ -23,20 +23,18 @@
 <p class="alert alert-dark">Item Detail</p>
   <div class="row">
     <div class="col-1">
-      <select name="" id="" class="form-control">
-        <option value="#">Test</option>
-        <option value="#">Test</option>
-        <option value="#">Test</option>
+      <select class="form-control" #idElement (change)="selectItem(idElement.value)">
+        <option *ngFor="let tempItem of itemList" value="{{tempItem.code}}">{{tempItem.code}}</option>
       </select>
     </div>
     <div class="col-4">
-      <input type="text" class="form-control" disabled>
+      <input type="text" class="form-control" disabled [value]="selectedItem?.description">
     </div>
     <div class="col-3">
-      <input type="text" class="form-control" disabled>
+      <input type="text" class="form-control" disabled [value]="selectedItem?.unitPrice">
     </div>
     <div class="col-3">
-      <input type="text" class="form-control" disabled>
+      <input type="text" class="form-control" disabled [value]="selectedItem?.qtyOnHand">
     </div>
     <div class="col-1">
       <input type="number" class="form-control">

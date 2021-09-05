@@ -9,12 +9,24 @@ import {CustomerService} from "../../../../core/service/customer.service";
 export class PlaceOrderComponent implements OnInit {
 
   selectedCustomer: any = null;
+  selectedItem: any = null;
+
+  itemList: any[] = [];
+
 
   constructor(private _customerService: CustomerService) {
   }
 
   ngOnInit(): void {
     this.loadAllCustomers();
+    this.itemList = [
+      {code: '1', description: 'Description 1', qtyOnHand: 50, unitPrice: 250},
+      {code: '2', description: 'Description 2', qtyOnHand: 45, unitPrice: 458},
+      {code: '3', description: 'Description 3', qtyOnHand: 78, unitPrice: 754},
+      {code: '4', description: 'Description 4', qtyOnHand: 96, unitPrice: 536},
+      {code: '5', description: 'Description 5', qtyOnHand: 85, unitPrice: 458}
+    ];
+    this.selectedItem = this.itemList[0];
   }
 
   customers: any[] = [];
@@ -34,6 +46,17 @@ export class PlaceOrderComponent implements OnInit {
     for (const temp of this.customers) {
       if (value === temp.id) {
         this.selectedCustomer = temp;
+        return;
+      }
+    }
+  }
+
+  selectItem(value: string) {
+    console.log(value)
+    for (const temp of this.itemList) {
+      if (value === temp.code) {
+        console.log(temp)
+        this.selectedItem = temp;
         return;
       }
     }
