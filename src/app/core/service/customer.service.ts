@@ -22,12 +22,19 @@ export class CustomerService {
       salary: data.salary
     });
   }
+
   public updateCustomer(data: CustomerDTO): Observable<any> {
     return this.http.put(this.url+'customer/updateCustomer', {
       id: data.id,
       name: data.name,
       address: data.address,
       salary: data.salary
+    });
+  }
+
+  public deleteCustomer(id: string): Observable<any> {
+    return this.http.delete(this.url+'customer/deleteCustomer', {
+    headers:{id}
     });
   }
 
