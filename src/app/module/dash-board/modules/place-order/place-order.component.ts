@@ -67,7 +67,8 @@ export class PlaceOrderComponent implements OnInit {
   addToCart(value: string) {
     const selectedQTY = Number(value);
     const tempUnitPrice = Number(this.selectedItem?.unitPrice);
-    const total = selectedQTY * tempUnitPrice;
+    console.log(selectedQTY * tempUnitPrice);
+    const total = Number(selectedQTY * tempUnitPrice);
     let temp = {
       itemCode: this.selectedItem?.code,
       description: this.selectedItem?.description,
@@ -76,5 +77,9 @@ export class PlaceOrderComponent implements OnInit {
       total: total,
     }
     this.cart.push(temp);
+  }
+
+  deleteFromCart(num: number) {
+    this.cart.splice(num,1);
   }
 }

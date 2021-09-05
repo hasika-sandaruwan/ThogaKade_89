@@ -59,10 +59,10 @@
         <td>{{tempItem.itemCode}}</td>
         <td>{{tempItem.description}}</td>
         <td>{{tempItem.unitPrice}}</td>
+        <td>{{tempItem.qty}}</td>
         <td>{{tempItem.total}}</td>
-        <td>{{tempItem.itemCode}}</td>
         <td>
-          <button class="btn btn-danger btn-sm">Delete</button>
+          <button class="btn btn-danger btn-sm" (click)="deleteFromCart(num)">Delete</button>
         </td>
       </tr>
     </tbody>
