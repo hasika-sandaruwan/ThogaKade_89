@@ -77,9 +77,21 @@ export class PlaceOrderComponent implements OnInit {
       total: total,
     }
     this.cart.push(temp);
+    this.calculateTotalCost();
+  }
+
+  totalCost = 0.0;
+
+  private calculateTotalCost() {
+    this.totalCost = 0.0;
+    for (const temp of this.cart) {
+      this.totalCost += temp.total;
+    }
+
   }
 
   deleteFromCart(num: number) {
-    this.cart.splice(num,1);
+    this.cart.splice(num, 1);
+    this.calculateTotalCost();
   }
 }
