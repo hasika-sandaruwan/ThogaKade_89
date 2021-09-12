@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CustomerService} from "../../../../core/service/customer.service";
+import {OrderService} from "../../../../core/service/order.service";
 
 @Component({
   selector: 'app-place-order',
@@ -14,7 +15,7 @@ export class PlaceOrderComponent implements OnInit {
   itemList: any[] = [];
 
 
-  constructor(private _customerService: CustomerService) {
+  constructor(private _customerService: CustomerService, private _orderService: OrderService) {
   }
 
   ngOnInit(): void {
@@ -94,4 +95,13 @@ export class PlaceOrderComponent implements OnInit {
     this.cart.splice(num, 1);
     this.calculateTotalCost();
   }
+
+  public placeOrder(){
+    this._orderService.saveOrder(this.selectedCustomer, this.cart, this.totalCost).subscribe(response=>{
+      alert(response.message);
+    }, error => {
+      console.log(error);
+    })
+  }
+
 }
