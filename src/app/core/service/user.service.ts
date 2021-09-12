@@ -21,4 +21,12 @@ export class UserService {
     });
   }
 
+  public login(
+    email: string, password: string
+  ): Observable<any>{
+    return this.http.get(this.url+'user/login',{
+      headers:{email,password}
+    });
+  }
+
 }

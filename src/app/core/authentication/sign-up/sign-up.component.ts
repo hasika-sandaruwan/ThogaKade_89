@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {UserService} from "../../service/user.service";
 import {LocalStorageService} from "angular-2-local-storage";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-sign-up',
@@ -17,7 +18,7 @@ export class SignUpComponent implements OnInit {
     password: new FormControl('', Validators.required)
   });
 
-  constructor(private _userService: UserService, private _localStorage: LocalStorageService) {
+  constructor(private _router: Router, private _userService: UserService, private _localStorage: LocalStorageService) {
   }
 
   ngOnInit(): void {
@@ -34,6 +35,7 @@ export class SignUpComponent implements OnInit {
 
       if (response.status) {
         this._localStorage.add('cmjdToken',response.token);
+        this._router.navigateByUrl('/dashboard');
       } else {
         console.log("try again");
       }

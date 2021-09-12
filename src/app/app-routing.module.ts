@@ -5,7 +5,7 @@ import {LoginComponent} from "./core/authentication/login/login.component";
 import {SignUpComponent} from "./core/authentication/sign-up/sign-up.component";
 
 const routes: Routes = [
-  {path: '', redirectTo: '/auth', pathMatch: 'full'},
+  {path: '', redirectTo: '/auth/login', pathMatch: 'full'},
   {
     path: 'auth', component: AuthenticationContextComponent, children: [
       {path: '', redirectTo: '/auth/login', pathMatch: 'full'},
